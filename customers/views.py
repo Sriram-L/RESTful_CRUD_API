@@ -8,7 +8,7 @@ from customers.models import Customers
 from customers.serializers import CustomersSerializer
 
 
-# Create your views here.
+# Class based views for different route methods
 
 class customerApi(APIView):
 
@@ -18,7 +18,7 @@ class customerApi(APIView):
     def get(self, request, id):
         customerDetails = self.get_customer(id)
         customer_serializer = CustomersSerializer(customerDetails)
-        return Response(customer_serializer.data)
+        return Response(customer_serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, id):
         customerDetails = self.get_customer(id)
@@ -26,7 +26,7 @@ class customerApi(APIView):
             customerDetails, data=request.data)
         if (customer_serializer.is_valid()):
             customer_serializer.save()
-            return Response(customer_serializer.data)
+            return Response(customer_serializer.data, status=status.HTTP_204_NO_CONTENT)
         return Response(customer_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, id):

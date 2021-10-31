@@ -89,6 +89,9 @@ DATABASES = {
         'USER': 'sriram',
         'PASSWORD': 'abcd1234',
         'HOST': 'localhost',
+        'TEST': {
+            'NAME': 'test_customersDB',
+        },
     }
 }
 
