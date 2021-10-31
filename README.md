@@ -7,7 +7,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the mod
 
 Also install [MySql server](https://dev.mysql.com/downloads/mysql/) for the MySql database.
 
-Chage the DATABASE details in settings.py
+Change the DATABASE details in settings.py
 
 ```bash
 pip install -r requirements.txt
